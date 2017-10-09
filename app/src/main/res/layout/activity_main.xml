@@ -11,8 +11,29 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.github.rakickayakaterina.mycalculator.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/input_edit_text"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"/>
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Input expression"/>
+
+    <Button
+        android:id="@+id/evaluate_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/input_edit_text"
+        android:layout_marginTop="39dp"
+        android:text="Evaluate"/>
+
+    <TextView
+        android:id="@+id/output__text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/evaluate_button"
+        android:layout_centerHorizontal="true"
+        android:text="Answer"/>
 </RelativeLayout>
+
