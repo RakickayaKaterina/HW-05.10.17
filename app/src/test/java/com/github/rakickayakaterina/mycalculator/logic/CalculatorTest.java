@@ -1,5 +1,6 @@
 package com.github.rakickayakaterina.mycalculator.logic;
 
+import org.apache.tools.ant.taskdefs.condition.Equals;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -15,15 +16,18 @@ public class CalculatorTest {
 
     @Before
     public void  setUp(){
-     //   mCalculator = spy(Calculator.class);
-        mCalculator =  mock(Calculator.class);
+       mCalculator = spy(Calculator.class);
+
+
     }
-
-
 
     @Test
-    public void evaluate() throws Exception {
-        assertEquals(mCalculator.evaluate("5"),null);
+    public void calculatorTest(){
+        assertEquals(mCalculator.add(2.4,8.6),11,0);
+        assertEquals(mCalculator.sub(2.4,2.4),0,0);
+        assertEquals(mCalculator.mul(2.4,2.0),4.8,0);
+        assertEquals(mCalculator.div(2.4,1.2),2,0);
     }
+
 
 }
