@@ -5,31 +5,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
     tools:context="com.github.rakickayakaterina.mycalculator.MainActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.20"
         android:orientation="horizontal">
-    <EditText
-        android:id="@+id/inputFirstOp_edit_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_weight="1"
-        android:text="Input the first op"/>
-    <EditText
-        android:id="@+id/inputSecondOp_edit_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_weight="1"
-        android:text="Input expression the second op"/>
+
+        <EditText
+            android:id="@+id/inputFirstOp_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:id="@+id/inputSecondOp_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_weight="1"/>
     </LinearLayout>
 
     <LinearLayout
@@ -37,54 +38,63 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.10"
         android:orientation="vertical">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.10"
-        android:orientation="horizontal">
-         <Button
-            android:id="@+id/add_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/input_edit_text"
-            android:layout_weight="1"
-            android:layout_marginTop="39dp"
-            android:text="+"/>
-         <Button
-            android:id="@+id/sub_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/input_edit_text"
-            android:layout_weight="1"
-            android:layout_marginTop="39dp"
-            android:text="-"/>
-         <Button
-            android:id="@+id/mul_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/input_edit_text"
-            android:layout_weight="1"
-            android:layout_marginTop="39dp"
-            android:text="*"/>
-         <Button
-            android:id="@+id/div_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/input_edit_text"
-            android:layout_weight="1"
-            android:layout_marginTop="39dp"
-            android:text="/"/>
 
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.10"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/add_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_edit_text"
+                android:layout_marginTop="39dp"
+                android:layout_weight="1"
+                android:enabled="false"
+                android:text="+"/>
+
+            <Button
+                android:id="@+id/sub_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_edit_text"
+                android:layout_marginTop="39dp"
+                android:layout_weight="1"
+                android:enabled="false"
+                android:text="-"/>
+
+            <Button
+                android:id="@+id/mul_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_edit_text"
+                android:layout_marginTop="39dp"
+                android:layout_weight="1"
+                android:enabled="false"
+                android:text="*"/>
+
+            <Button
+                android:id="@+id/div_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_edit_text"
+                android:layout_marginTop="39dp"
+                android:layout_weight="1"
+                android:enabled="false"
+                android:text="/"/>
+
+        </LinearLayout>
     </LinearLayout>
 
     <TextView
         android:id="@+id/output__text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
         android:layout_below="@+id/evaluate_button"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
         android:layout_weight="1"
         android:text="Answer"/>
 </LinearLayout>
