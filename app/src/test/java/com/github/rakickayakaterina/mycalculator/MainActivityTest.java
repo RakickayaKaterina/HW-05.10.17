@@ -7,10 +7,10 @@ import android.widget.TextView;
 import com.github.rakickayakaterina.mycalculator.logic.Calculator;
 import com.github.rakickayakaterina.mycalculator.logic.ICalculator;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Matchers;
 import org.mockito.Mock;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
@@ -26,7 +26,7 @@ import static org.mockito.Mockito.when;
 @Config(constants = BuildConfig.class, sdk = 21)
 public class MainActivityTest {
 
-    private ActivityController<MainActivity> mMainActivityActivityController;
+    private ActivityController<MainActivity> mMainActivityController;
     private MainActivity mMainActivity;
     @Mock
     private ICalculator mCalculator;
@@ -39,8 +39,8 @@ public class MainActivityTest {
 
     @Before
     public void initialize() {
-        mMainActivityActivityController = Robolectric.buildActivity(MainActivity.class).create().start().resume();
-        mMainActivity = mMainActivityActivityController.get();
+        mMainActivityController = Robolectric.buildActivity(MainActivity.class).create().start().resume();
+        mMainActivity = mMainActivityController.get();
         mInputFirstOp = (EditText) mMainActivity.findViewById(R.id.inputFirstOp_edit_text);
         mInputSecondOp = (EditText) mMainActivity.findViewById(R.id.inputSecondOp_edit_text);
         mAddButton = mMainActivity.findViewById(R.id.add_button);
@@ -124,5 +124,9 @@ public class MainActivityTest {
         mDivButton.performClick();
         assertEquals("5.0", answer.getText());
 
+    }
+    @After
+    public void destroy(){
+        mMainActivityController.pause().stop().destroy();
     }
 }
