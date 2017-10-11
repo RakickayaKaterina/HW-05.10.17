@@ -26,16 +26,19 @@ import static org.mockito.Mockito.when;
 @Config(constants = BuildConfig.class, sdk = 21)
 public class MainActivityTest {
 
+    private static final String THE_FIRST_NUMBER = "the first number";
+    private static final String THE_SECOND_NUMBER = "the second number";
     private ActivityController<MainActivity> mMainActivityController;
     private MainActivity mMainActivity;
     @Mock
     private ICalculator mCalculator;
-    EditText mInputFirstOp;
-    EditText mInputSecondOp;
-    View mAddButton;
-    View mSubButton;
-    View mMulButton;
-    View mDivButton;
+
+    private EditText mInputFirstOp;
+    private EditText mInputSecondOp;
+    private View mAddButton;
+    private View mSubButton;
+    private View mMulButton;
+    private View mDivButton;
 
     @Before
     public void initialize() {
@@ -65,13 +68,13 @@ public class MainActivityTest {
 
     @Test
     public void testBehavior() {
-        mInputFirstOp.setText("the first number");
+        mInputFirstOp.setText(THE_FIRST_NUMBER);
         assertTrue(!mAddButton.isEnabled());
         assertTrue(!mSubButton.isEnabled());
         assertTrue(!mMulButton.isEnabled());
         assertTrue(!mDivButton.isEnabled());
 
-        mInputSecondOp.setText("the second number");
+        mInputSecondOp.setText(THE_SECOND_NUMBER);
         assertTrue(mAddButton.isEnabled());
         assertTrue(mSubButton.isEnabled());
         assertTrue(mMulButton.isEnabled());
@@ -106,6 +109,7 @@ public class MainActivityTest {
         mDivButton.performClick();
         assertEquals("0.5", answer.getText());
     }
+
     @Test
     public void testSpyCalculator() {
         final TextView answer = (TextView) mMainActivity.findViewById(R.id.output__text_view);
@@ -125,8 +129,9 @@ public class MainActivityTest {
         assertEquals("5.0", answer.getText());
 
     }
+
     @After
-    public void destroy(){
+    public void destroy() {
         mMainActivityController.pause().stop().destroy();
     }
 }

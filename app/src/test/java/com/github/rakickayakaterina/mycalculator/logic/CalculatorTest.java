@@ -1,17 +1,14 @@
 package com.github.rakickayakaterina.mycalculator.logic;
 
-import org.apache.tools.ant.taskdefs.condition.Equals;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.mock;
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.spy;
-import static org.mockito.Mockito.when;
 
 public class CalculatorTest {
 
-    ICalculator mCalculator;
+    private ICalculator mCalculator;
 
     @Before
     public void setUp() {

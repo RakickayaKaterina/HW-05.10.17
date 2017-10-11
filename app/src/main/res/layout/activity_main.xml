@@ -22,15 +22,15 @@
             android:id="@+id/inputFirstOp_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:inputType="number"/>
 
         <EditText
             android:id="@+id/inputSecondOp_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:inputType="number"/>
     </LinearLayout>
 
     <LinearLayout
@@ -49,41 +49,37 @@
                 android:id="@+id/add_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/input_edit_text"
                 android:layout_marginTop="39dp"
                 android:layout_weight="1"
                 android:enabled="false"
-                android:text="+"/>
+                android:text="@string/add"/>
 
             <Button
                 android:id="@+id/sub_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/input_edit_text"
                 android:layout_marginTop="39dp"
                 android:layout_weight="1"
                 android:enabled="false"
-                android:text="-"/>
+                android:text="@string/sub"/>
 
             <Button
                 android:id="@+id/mul_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/input_edit_text"
                 android:layout_marginTop="39dp"
                 android:layout_weight="1"
                 android:enabled="false"
-                android:text="*"/>
+                android:text="@string/mul"/>
 
             <Button
                 android:id="@+id/div_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/input_edit_text"
                 android:layout_marginTop="39dp"
                 android:layout_weight="1"
                 android:enabled="false"
-                android:text="/"/>
+                android:text="@string/div"/>
 
         </LinearLayout>
     </LinearLayout>
@@ -92,10 +88,8 @@
         android:id="@+id/output__text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/evaluate_button"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:layout_weight="1"
-        android:text="Answer"/>
+        android:text="@string/answer"/>
 </LinearLayout>
 
